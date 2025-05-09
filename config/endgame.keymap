@@ -56,7 +56,7 @@
             ├───────────┼───────────┼───────────┼───────────┼───────────┤            ├───────────┼───────────┼───────────┼───────────┼───────────┤
             │     =     │     +     │     |     │     &     │     *     │            │           │           │           │           │           │
             ├───────────┴─────┬─────┴───────────┼───────────┼─────────────────╮╭─────────────────┼───────────┼───────────┴─────┬─────────────────┤
-            │                 │                 │     -     │        _        ││                 │           │                 │                 │
+            │                 │                 │     -     │     _/NUM       ││                 │           │                 │                 │
             ╰─────────────────╯                 ╰───────────┴─────────────────╯╰─────────────────┴───────────╯                 ╰─────────────────╯ */
         symbols {
             label = "SYM";
@@ -65,7 +65,7 @@
              &tilde_usi  &grave_usi  &squote_usi &dquote_usi &caret_usi                           &trans      &trans      &trans      &trans      &trans
              &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                            &trans      &trans      &trans      &trans      &trans
              &kp EQUAL   &kp PLUS    &kp PIPE    &kp AMPS    &kp STAR                             &trans      &trans      &trans      &trans      &trans
-             &trans                                          &kp MINUS    &kp UNDER   &trans      &trans                                          &trans
+             &trans                                          &kp MINUS    NUM_UND     &trans      &trans                                          &trans
             >;
         };
 
@@ -79,7 +79,7 @@
             ├───────────┼───────────┼───────────┼───────────┼───────────┤            ├───────────┼───────────┼───────────┼───────────┼───────────┤
             │           │           │           │    F11    │    F12    │            │     {     │     1     │     2     │     3     │     }     │
             ├───────────┴─────┬─────┴───────────┼───────────┼─────────────────╮╭─────────────────┼───────────┼───────────┴─────┬─────────────────┤
-            │                 │                 │           │                 ││        \        │     0     │                 │                 │
+            │                 │                 │           │                 ││      \/SYM      │     0     │                 │                 │
             ╰─────────────────╯                 ╰───────────┴─────────────────╯╰─────────────────┴───────────╯                 ╰─────────────────╯ */
         numbers {
             label = "NUM";
@@ -88,7 +88,7 @@
              &kp F1      &kp F2      &kp F3      &kp F4      &kp F5                               &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT
              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10                              &kp LPAR    &kp N4      &kp N5      &kp N6      &kp RPAR
              &trans      &trans      &trans      &kp F11     &kp F12                              &kp LBRC    &kp N1      &kp N2      &kp N3      &kp RBRC
-             &trans                                          &trans       &trans      &kp BSLH    &kp N0                                          &trans
+             &trans                                          &trans       &trans      SYM_BSL     &kp N0                                          &trans
             >;
         };
 
@@ -121,7 +121,7 @@
             ╭───────────┬───────────┬───────────┬───────────┬───────────╮            ╭───────────┬───────────┬───────────┬───────────┬───────────╮
             │   Reset   │           │           │Tap. Term ↑│           │            │           │           │           │           │           │
             ├───────────┼───────────┼───────────┼───────────┼───────────┤            ├───────────┼───────────┼───────────┼───────────┼───────────┤
-            │Bootloader │           │           │Print TapT.│           │            │     ←     │     ↓     │     ↑     │     →     │           │
+            │Bootloader │           │           │Print TapT.│           │            │           │           │           │           │           │
             ├───────────┼───────────┼───────────┼───────────┼───────────┤            ├───────────┼───────────┼───────────┼───────────┼───────────┤
             │Make Keymap│           │           │Tap. Term ↓│           │            │           │           │           │           │           │
             ├───────────┴─────┬─────┴───────────┼───────────┼─────────────────╮╭─────────────────┼───────────┼───────────┴─────┬─────────────────┤
@@ -131,9 +131,9 @@
             label = "ADJ";
 
             bindings = <
-                &sys_reset &none     &none       &none       &bl BL_INC                           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR
+                &sys_reset &none     &none       &none       &bl BL_INC                           &none        &none       &none         &none         &none
                 &bootloader &none    &none       &none       &bl BL_TOG                           &none        &none       &none         &none         &none
-                &none      &none     &none       &none       &bl BL_DEC                           &none        &none       &none         &none         &bt BT_CLR_ALL
+                &none      &none     &none       &none       &bl BL_DEC                           &none        &none       &none         &none         &none
                 &none                                        &trans      &trans       &trans      &trans                                               &none
             >;
         };
