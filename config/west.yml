@@ -5,11 +5,18 @@
        url-base: https://github.com/zmkfirmware
      - name: saixos
        url-base: https://github.com/nmunnich
+     - name: TisseTheTiz
+       url-base: https://github.com/TisseTheTiz
    projects:
      - name: zmk
        remote: saixos
        # revision: rp2040zero
        revision: aa2294c
        import: app/west.yml
+     - name: config-headers
+       repo-path: zmk-config-headers
+       remote: TisseTheTiz
+       revision: main
+       path: config/headers
    self:
      path: config
