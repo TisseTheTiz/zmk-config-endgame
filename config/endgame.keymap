@@ -4,9 +4,9 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/backlight.h>
 
-#include "../../../headers/keypos/endgame.h"
-#include "../../../headers/common/common.h"
-#include "../../../headers/keymap/keymap.h"
+#include "../../headers/keypos/endgame.h"
+#include "../../headers/common/common.h"
+#include "../../headers/keymap/keymap.h"
 
 / {
 
